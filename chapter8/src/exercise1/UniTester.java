@@ -4,8 +4,7 @@ public class UniTester {
 
 	public UniTester() {
 	
-		dasdasd
-		
+		dadas
 	}
 
 	public static void main(String[] args) {
