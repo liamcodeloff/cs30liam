@@ -6,22 +6,13 @@ import java.util.Scanner;
 
 public class UniTester 
 {
-    public static void payEmployee(UEmployee emp, double payR)
-    {
-        NumberFormat money = NumberFormat.getCurrencyInstance();
-        double pay;
-        
-        System.out.println(emp);
-        pay = emp.pay(payR);
-        System.out.println(money.format(pay));
-        
-    }
+    
     
     public static void main(String[] args) 
     {
       UEmployee emp1 = new UEmployee("Bruce", "Wayne", (double) 2000);  
       Faculty emp2 = new Faculty("Peter", "Parker", (double) 150, "Web Developement");
-      Staff emp3 = new Staff("Darth", "Vader", (double) 600, "Full time");
+      Staff emp3 = new Staff("Darth", "Vader", (double) 600, "Full time Professor");
       
       Scanner input = new Scanner(System.in);
       
@@ -29,7 +20,7 @@ public class UniTester
       int empNum;
       double payR;
       
-      Employee emp = emp1;
+      UEmployee emp = emp1;
      do
      { 
       System.out.println("\nEmployee\\Pay\\Quit");
@@ -52,7 +43,7 @@ public class UniTester
          }
          else if(action.equalsIgnoreCase("P"))
          {
-            System.out.println("Enter the hours for associate OR pay period for manager: " );
+            System.out.println("" );
             payR = input.nextDouble();
             payEmployee(emp, payR);
          }
