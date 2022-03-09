@@ -2,9 +2,9 @@ package exercise1;
 
 public class Faculty extends UEmployee {
 private String deptName;
-	public Faculty(String fName, String lName, Double sal, String d) {
+	public Faculty(String name, Double sal, String d) {
 	
-		super(fName,lName,sal);
+		super(name,sal);
 		deptName = d;
 	}
 public String toString() {

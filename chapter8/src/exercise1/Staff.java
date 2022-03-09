@@ -2,9 +2,9 @@ package exercise1;
 
 public class Staff extends UEmployee {
 private String jobTitle;
-	public Staff(String fName, String lName, Double sal, String jb) {
+	public Staff(String name, Double sal, String jb) {
 	
-		super(fName,lName,sal);
+		super(name,sal);
 		jobTitle = jb;
 	}
 	

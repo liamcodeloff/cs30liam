@@ -6,17 +6,29 @@ import java.util.Scanner;
 
 public class UniTester 
 {
+    public static UEmployee assign() {
+        Scanner input = new Scanner(System.in);
+
+    	System.out.println("Enter employee name");
+    	
+    	String name = input.next();
+    	 System.out.println("Enter employee salary");
+    	 
+    	 double sal = input.nextDouble();
+
+    	
+    	
+    			
+    }
     
-    
-    public static void main(String[] args) 
+   
+	
+	
+	
+	
+	public static void main(String[] args) 
     {
-      UEmployee emp1 = new UEmployee("Bruce", "Wayne", (double) 150);  
-      Faculty emp2 = new Faculty("Peter", "Parker", (double) 400, "Web Developement");
-      Staff emp3 = new Staff("Darth", "Vader", (double) 2000, "Full time Professor");
-      
-      Scanner input = new Scanner(System.in);
-      
-      System.out.println("");
+      UEmployee emp1, emp2, emp3;
       
       
       
