@@ -1,17 +1,19 @@
 package exercise1;
 
 public class UEmployee {
-	private String fullName;
+	private String firstName;
+	private String lastName;
 	private Double salary;
 	
-	public UEmployee(String name, Double sal) {
-		fullName = name;
+	public UEmployee(String fn, String ln, Double sal) {
+		firstName = fn;
+		lastName = ln;
 		salary = sal;
 		
 	}
 	public String toString()
     {
-        return(fullName + " " + salary);
+        return(firstName + " " + lastName + " " + salary);
     }
 	
 	
