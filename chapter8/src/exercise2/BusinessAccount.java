@@ -1,10 +1,14 @@
 package exercise2;
 
-public class BusinessAccount {
+public class BusinessAccount extends Account {
+
+	public BusinessAccount(double bal, String fName, String lName, String str, String city, String st, String zip) {
+		super(bal, fName, lName, str, city, st, zip);
+		
+	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	
 	}
 
 }
