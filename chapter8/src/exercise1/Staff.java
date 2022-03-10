@@ -2,7 +2,7 @@ package exercise1;
 
 public class Staff extends UEmployee {
 private String jobTitle;
-	public Staff(String fn, String ln, Double sal, String jb) {
+	public Staff(String fn, String ln, Integer sal, String jb) {
 	
 		super(fn, ln,sal);
 		jobTitle = jb;
