@@ -3,9 +3,9 @@ package exercise1;
 public class UEmployee {
 	private String firstName;
 	private String lastName;
-	private Double salary;
+	private Integer salary;
 	
-	public UEmployee(String fn, String ln, Double sal) {
+	public UEmployee(String fn, String ln, Integer sal) {
 		firstName = fn;
 		lastName = ln;
 		salary = sal;

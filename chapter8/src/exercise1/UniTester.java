@@ -17,7 +17,7 @@ public class UniTester
     	String ln = input.next();
     	 System.out.println("Enter employee salary");
     	 
-    	 double sal = input.nextDouble();
+    	 int sal = input.nextInt();
 		
     	 System.out.println("Enter employee type: Faculty or Staff");
     	  String empT;
@@ -29,7 +29,7 @@ public class UniTester
     		
     		  return new Faculty(fn, ln, sal, d);
     		  
-    		  
+    		  /*test*/
     	  } 
     	  else 
     	  {
