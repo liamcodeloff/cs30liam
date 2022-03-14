@@ -29,7 +29,7 @@ public class UniTester
     		
     		  return new Faculty(fn, ln, sal, d);
     		  
-    		  /*test*/
+    		  /*tester*/
     	  } 
     	  else 
     	  {
