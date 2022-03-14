@@ -5,7 +5,7 @@ Program: Associate.java          Last Date of this Revision: 13-Oct-2020
 Purpose: 
 
 Author: Your Name 
-School: CHH
+School: CHsH
 Course: Computer Programming ??
  
 
