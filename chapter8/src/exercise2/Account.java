@@ -4,6 +4,7 @@ import java.text.NumberFormat;
 
 public class Account {
 	private double balance;
+	private double minimumBalance;
 	private Customer cust;
 		
 	
@@ -13,8 +14,9 @@ public class Account {
 	 * post: An account has been created. Balance and 
 	 * customer data has been initialized with parameters.
 	 */
-	public Account(double bal, String fName, String lName, String str, String city, String st, String zip) {
+	public Account(double bal, double minBal, String fName, String lName, String str, String city, String st, String zip) {
 		balance = bal;
+		minimumBalance = minBal;
 		cust = new Customer(fName, lName, str, city, st, zip);
 	}
 	
