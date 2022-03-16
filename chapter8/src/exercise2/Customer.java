@@ -1,31 +1,19 @@
 package exercise2;
 
 public class Customer {
-	private String firstName, lastName, street, city, state, zip;
+	private String firstName, lastName, street, city, state, zip, province;
 		
 	
-	/**
-	 * constructor
-	 * pre: none
-	 * post: A Customer object has been created. 
-	 * Customer data has been initialized with parameters.
-	 */
-	public Customer(String fName, String lName, String str, String c, String s, String z) {
+	public Customer(String fName, String lName, String str, String c, String p, String z) {
 		firstName = fName;
 		lastName = lName;
 		street = str;
 		city = c;
-		state = s;
+		province = p;
 		zip = z;
 	}
 	
 
-	/**
-	 * Returns a String that represents the Customer object.
-	 * pre: none
-	 * post: A string representing the Account object has 
-	 * been returned.
-	 */
 	 public String toString() {
 		String custString;
 	

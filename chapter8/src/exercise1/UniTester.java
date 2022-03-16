@@ -18,10 +18,9 @@ public class UniTester
     	 System.out.println("Enter employee salary");
     	 
     	 int sal = input.nextInt();
-		
+	
     	 System.out.println("Enter employee type: Faculty or Staff");
-    	  String empT;
-    	  empT = input.next();
+    	 String empT = input.next();
     	  if(empT.equalsIgnoreCase("F")) 
     	  {
     		  System.out.println("Enter Department name");

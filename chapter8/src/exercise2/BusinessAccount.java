@@ -1,12 +1,18 @@
 package exercise2;
 
 public class BusinessAccount extends Account {
-	public BusinessAccount(double bal, double minBal, String fName, String lName, String str, String city, String st, String zip) {
-		super(bal, minBal, fName, lName, str, city, st, zip);
+	public BusinessAccount(double bal, String fName, String lName, String str, String city, String p, String zip) {
+		super(bal, fName, lName, str, city, p, zip);
 		
 	}
 
-	public static void main(String[] args) {
+	public void withdrawal(double amt) {
+		super.withdrawal(amt);
+		
+		if (super.getBalance()<500) {
+			super.fee(10);
+			System.out.println("Minimum balance not met, $10.00 has been removed from your account. New balance is: " + super.getBalance());
+		}
 	
 	}
 

@@ -2,9 +2,8 @@ package exercise2;
 
 import java.text.NumberFormat;
 
-public class Account {
+public class Account extends Customer {
 	private double balance;
-	private double minimumBalance;
 	private Customer cust;
 		
 	
@@ -14,10 +13,12 @@ public class Account {
 	 * post: An account has been created. Balance and 
 	 * customer data has been initialized with parameters.
 	 */
-	public Account(double bal, double minBal, String fName, String lName, String str, String city, String st, String zip) {
+	public Account(double bal, String fName, String lName, String str, String city, String p, String zip) {
+		super(fName,lName,str,city,p,zip);
+
 		balance = bal;
-		minimumBalance = minBal;
-		cust = new Customer(fName, lName, str, city, st, zip);
+
+		cust = new Customer(fName, lName, str, city, p, zip);
 	}
 	
 
@@ -54,13 +55,10 @@ public class Account {
 	 	}
 	}
 	
+	public void fee(double amt) {
+		balance = balance - amt;
+	}
 	
-	/** 
-	 * Returns a String that represents the Account object.
-	 * pre: none
-	 * post: A string representing the Account object has 
-	 * been returned.
-	 */
 	public String toString() {
 		String accountString;
 		NumberFormat money = NumberFormat.getCurrencyInstance();
