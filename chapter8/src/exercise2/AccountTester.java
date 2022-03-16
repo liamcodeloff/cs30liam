@@ -15,7 +15,7 @@ public class AccountTester {
 			
 		} 
 		else if(type.equalsIgnoreCase("Business")) {
-			
+			BusinessAccouunt cust = new BusinessAccount(800, "Abdalla", "Smash", "Real Ave", "Edmonton", "Lberta", "T3K 6O4");			
 		} else {
 			System.out.println("Incompatible account type.");
 		}
