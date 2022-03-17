@@ -13,12 +13,12 @@ public class Account extends Customer {
 	 * post: An account has been created. Balance and 
 	 * customer data has been initialized with parameters.
 	 */
-	public Account(double bal, String fName, String lName, String str, String city, String p, String zip) {
-		super(fName,lName,str,city,p,zip);
+	public Account(double bal, String fName, String lName, String s, String c, String p, String z) {
+		super(fName,lName,s,c,p,z);
 
 		balance = bal;
 
-		cust = new Customer(fName, lName, str, city, p, zip);
+		cust = new Customer(fName, lName, s, c, p, z);
 	}
 	
 

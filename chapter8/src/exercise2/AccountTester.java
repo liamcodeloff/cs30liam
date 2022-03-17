@@ -9,28 +9,81 @@ public class AccountTester {
 		Scanner input = new Scanner(System.in);
 		
 		System.out.println("Enter First name:");
-		String fName = input.next();
+		String fName = input.nextLine();
 		
 		System.out.println("Enter Last name:");
-		String lName = input.next();
+		String lName = input.nextLine();
 		
 		System.out.println("Enter street address:");
-		String str = input.next();
-		
+		String str = input.nextLine();
+
 		System.out.println("Enter city:");
-		String city = input.next();
-		
+		String city = input.nextLine();
+
 		System.out.println("Enter province:");
-		String pro = input.next();
-		
+		String pro = input.nextLine();
+	
 		System.out.println("Enter postal/zip code:");
-		String zip = input.next();
-		Double bal = (double) 700;
-		Account user = new Account((double) bal, fName, lName, str, city, pro, zip);
+		String zip = input.nextLine();
+		
+		Double bal = (double) 2000;
 		
 		System.out.println("Enter account type, Personal or Business?");
-		String type = input.next();
+		String type = input.nextLine();
 		
+
+		if (type.equalsIgnoreCase("Personal")) {
+			
+			PersonalAccount user = new PersonalAccount((double) bal, fName, lName, str, city, pro, zip);
+			System.out.println(user);
+			
+			System.out.println("\n What would you like to do today? \n Withdraw or Deposit");
+			String action = input.next();
+			
+			if (action.equalsIgnoreCase("Deposit")) 
+			{
+			System.out.println("How much would you like to deposit?");
+			double amt = input.nextDouble();
+			user.deposit(amt);
+			System.out.println("New balance is: " + user.getBalance());
+			
+			}
+			if(action.equalsIgnoreCase("Withdraw")) {
+			System.out.println("How much would you like to withdraw?");
+			double amt = input.nextDouble();
+			user.withdrawal(amt);
+			System.out.println("New balance is: " + user.getBalance());
+			}
+			
+			
+			
+		} 
+		else 
+		{
+		if (type.equalsIgnoreCase("Business")) {
+			BusinessAccount user = new BusinessAccount((double) bal, fName, lName, str, city, pro, zip);
+			
+            System.out.println(user);
+			
+			System.out.println("\n What would you like to do today? \n Withdraw or Deposit");
+			String action = input.next();
+			
+			if (action.equalsIgnoreCase("Deposit")) 
+			{
+			System.out.println("How much would you like to deposit?");
+			double amt = input.nextDouble();
+			user.deposit(amt);
+			System.out.println("New balance is: " + user.getBalance());
+			
+			}
+			if(action.equalsIgnoreCase("Withdraw")) {
+			System.out.println("How much would you like to withdraw?");
+			double amt = input.nextDouble();
+			user.withdrawal(amt);
+			System.out.println("New balance is: " + user.getBalance());
+			}
+		}
+		}
 		
 	}
 		

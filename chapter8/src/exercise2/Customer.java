@@ -1,25 +1,25 @@
 package exercise2;
 
 public class Customer {
-	private String firstName, lastName, street, city, state, zip, province;
+	private String firstName, lastName, street, city, zip, province;
 		
 	
-	public Customer(String fName, String lName, String str, String c, String p, String z) {
+	public Customer(String fName, String lName, String s, String c, String p, String z) {
 		firstName = fName;
 		lastName = lName;
-		street = str;
+		street = s;
 		city = c;
 		province = p;
 		zip = z;
+		
 	}
 	
 
 	 public String toString() {
 		String custString;
 	
-		custString = firstName + " " + lastName + "\n";
-		custString += street + "\n";
-		custString += city + ", " + state + "  " + zip + "\n";
+		custString ="Customer Info: \n" + firstName + " " + lastName + "\n ";
+		custString +="Lives at: " + street + "\n " + city + " " + province + " " + zip + "\n \n";
 	 	return(custString);
 	}
 }
