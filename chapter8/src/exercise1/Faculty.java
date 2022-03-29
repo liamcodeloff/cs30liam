@@ -1,7 +1,8 @@
 package exercise1;
 
 public class Faculty extends UEmployee {
-private String deptName;
+/* Extends uemployee class and adds faculty specific variable */
+	private String deptName;
 	public Faculty(String fn, String ln, Integer sal, String d) {
 	
 		super(fn, ln,sal);

@@ -51,7 +51,7 @@ public class UniTester
     {
       UEmployee emp1, emp2, emp3;
       
-      //creat employees for the university
+      //create employees for the university
       
       emp1 = assign() ;
       emp2 = assign();
