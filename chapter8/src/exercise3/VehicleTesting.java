@@ -23,7 +23,7 @@ public class VehicleTesting {
 			
 			
 		} else if (act == 3) {
-			Truck user = new Truck(6, "Black", 265, "Ford", true);
+			Truck user = new Truck(6, "Black", 265, "GMC", true);
 			System.out.println("Your truck has " + user.getDoorsNum() + " doors" + "\nA max speed of " + user.getMaxSpeed()
 			+ " kph \nIs manufactured by " + user.getManufacture() + "\n" + user.isLifted());
 
