@@ -1,9 +1,8 @@
-package stats;
+package stats2;
 
 public class stats2 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 	}
 
