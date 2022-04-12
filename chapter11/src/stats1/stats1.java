@@ -1,7 +1,9 @@
 package stats1;
 import java.io.*;
+import java.util.*;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.Arrays;
 public class stats1 {
 
 	public static void main(String[] args) {
@@ -13,7 +15,9 @@ public class stats1 {
 		int numScores = 0;
 		double totalScores = 0;
 		int count = 1;
-		
+		List<String> list = new ArrayList<String>();
+
+ 
 		try {
 			s = new FileReader(scores);
 			readFile = new BufferedReader(s);
@@ -25,6 +29,7 @@ public class stats1 {
 				totalScores += Double.parseDouble(score);
 				System.out.println(score);
 				count +=1;
+				list.add(score);
 				
 			}
 			else {
@@ -34,6 +39,9 @@ public class stats1 {
 			}
 			avg = totalScores / numScores;
 			System.out.println("Average score is:" + avg);
+			
+			System.out.println(list);
+			
 			
 
 			readFile.close();
