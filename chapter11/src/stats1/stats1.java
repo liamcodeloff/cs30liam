@@ -1,9 +1,7 @@
 package stats1;
 import java.io.*;
 import java.util.*;
-import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.Arrays;
 public class stats1 {
 
 	public static void main(String[] args) {
@@ -15,7 +13,7 @@ public class stats1 {
 		int numScores = 0;
 		double totalScores = 0;
 		int count = 1;
-		List<String> list = new ArrayList<String>();
+		ArrayList<Integer> list = new ArrayList<Integer>();
 
  
 		try {
@@ -29,8 +27,9 @@ public class stats1 {
 				totalScores += Double.parseDouble(score);
 				System.out.println(score);
 				count +=1;
-				list.add(score);
-				
+				int score1 = Integer.parseInt(score);
+				list.add(score1);
+
 			}
 			else {
 				System.out.println(score+" got a");
@@ -38,13 +37,12 @@ public class stats1 {
 			}
 			}
 			avg = totalScores / numScores;
-			System.out.println("Average score is:" + avg);
-			
-			System.out.println(list);
-			
-			
-
-			readFile.close();
+			System.out.println("Average Score was:" + avg);
+			Collections.sort(list);
+			int min = list.get(0);
+			int max = list.get(numScores - 1);
+			System.out.println("Highest Score was: " + max + "\nLowest Score was: " + min);
+				readFile.close();
 			s.close();
 		} catch (FileNotFoundException e) {
 			System.out.println("We ran into a problem retrieving your file " + e.getMessage());
