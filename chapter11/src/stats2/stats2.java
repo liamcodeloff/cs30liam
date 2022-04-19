@@ -20,32 +20,40 @@ public class stats2 {
 		Scanner input = new Scanner(System.in);
 		System.out.println("Enter name of file");
 		String file = input.next();
-		File newFile = new File("../Chapter11/src/stats2/" + file + ".txt");
 		
 		try {
-			if (wcount % 2 !=0) {
+		File newFile = new File("../Chapter11/src/stats2/" + file + ".txt");
+		if (newFile.createNewFile()) {
+			System.out.println("File created: " + newFile.getName());
+		} else {
+			System.out.println("File could not be created");
+		}
 
-			out = new FileWriter(newFile);
-			writeFile = new BufferedWriter(out);
+		} catch (IOException e) {
+			System.out.println("Error occurred");
+			e.printStackTrace();
+		}
+			
+		
+	
+		
+				
+
 			System.out.println("Enter student first name");
 			String fName = input.next();
 			System.out.println("Enter student last name");
 			String lName = input.next();
 			System.out.println("Enter student grade");
 			int scores = input.nextInt();
-			writeFile.write(fName);
-			writeFile.newLine();
-			writeFile.write(lName);
-			writeFile.newLine();
-			writeFile.write(String.valueOf(scores));
-			writeFile.newLine();
+			fWriter.write(fName);
+			fWriter.write("\n");
+			fWriter.write("\n");
+			fWriter.write(String.valueOf(scores));
+			fWriter.write("\n");
 			wcount +=1;
 			
-			}
-		} catch (IOException e) {
-			System.out.println("Error writing to file");
-			System.err.println("IOException: " + e.getMessage());
-		}
+			
+		
 		
  
 		/* file reader  */
