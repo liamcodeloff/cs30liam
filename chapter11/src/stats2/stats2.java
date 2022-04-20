@@ -1,5 +1,6 @@
 package stats2;
 import java.io.*;
+import java.nio.file.Path;
 import java.util.*;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -7,24 +8,27 @@ public class stats2 {
 
 	public static void main(String[] args) {
 		FileReader s;
-		FileWriter out;
 		BufferedReader readFile;
-		BufferedWriter writeFile;
+		FileWriter out;
+		BufferedWriter bWriter;
 		double avg;
 		String score;
 		int numScores = 0;
 		double totalScores = 0;
 		int count = 1;
-		int wcount = 1;
+		int scount;
 		ArrayList<Integer> list = new ArrayList<Integer>();
 		Scanner input = new Scanner(System.in);
+		
 		System.out.println("Enter name of file");
 		String file = input.next();
 		
 		try {
-		File newFile = new File("../Chapter11/src/stats2/" + file + ".txt");
-		if (newFile.createNewFile()) {
-			System.out.println("File created: " + newFile.getName());
+		File scoresFile = new File("../Chapter11/src/stats2/" + file + ".txt");
+		FileWriter writer = new FileWriter(scoresFile);
+		
+		if (scoresFile.createNewFile()) {
+			System.out.println("File created: " + scoresFile.getName());
 		} else {
 			System.out.println("File could not be created");
 		}
@@ -33,27 +37,19 @@ public class stats2 {
 			System.out.println("Error occurred");
 			e.printStackTrace();
 		}
-			
-		
 	
+		System.out.println("Enter number of students to be graded");
+		scount = input.nextInt();
 		
+			
+		
+			
+			
+			
 				
-
-			System.out.println("Enter student first name");
-			String fName = input.next();
-			System.out.println("Enter student last name");
-			String lName = input.next();
-			System.out.println("Enter student grade");
-			int scores = input.nextInt();
-			fWriter.write(fName);
-			fWriter.write("\n");
-			fWriter.write("\n");
-			fWriter.write(String.valueOf(scores));
-			fWriter.write("\n");
-			wcount +=1;
-			
-			
 		
+		
+			
 		
  
 		/* file reader  */
@@ -97,5 +93,4 @@ public class stats2 {
 		*/
 
 	}
-
-}
+	}
