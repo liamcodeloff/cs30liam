@@ -1,6 +1,5 @@
 package stats2;
 import java.io.*;
-import java.nio.file.Path;
 import java.util.*;
 import java.util.ArrayList;
 import java.util.Scanner;
