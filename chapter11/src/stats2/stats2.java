@@ -32,17 +32,13 @@ public class stats2 {
 			out = new FileWriter(scoresFile);
 			bWriter = new BufferedWriter(out);
 			pp = new PrintWriter(bWriter);
-			if (scoresFile.createNewFile()) {
-			} else {
-				
-			}
-
+			
 			 while (scount != 0) {
 			 
 				if (acount % 2 != 0 ) {
 				System.out.println("Enter student name to be graded");
-				String name = input.nextLine();
 				input.nextLine();
+				String name = input.nextLine();
 				pp.println(name);
 				pp.flush();
 				acount += 1;
@@ -84,7 +80,13 @@ public class stats2 {
 						readFile.close();
 					s.close();
 				}
+			
+			
 			} catch (IOException e) {
-			} 
+				System.out.println("An error has occurred");
+				System.err.println(e);
+				
+			}
+			
 	}		
 }

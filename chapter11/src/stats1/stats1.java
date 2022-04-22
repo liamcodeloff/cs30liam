@@ -8,10 +8,10 @@ public class stats1 {
 		File scores = new File("../Chapter11/src/stats1/scores.txt");
 		FileReader s;
 		BufferedReader readFile;
-		double avg;
+		int avg;
 		String score;
 		int numScores = 0;
-		double totalScores = 0;
+		int totalScores = 0;
 		int count = 1;
 		ArrayList<Integer> list = new ArrayList<Integer>();
 
