@@ -52,6 +52,7 @@ public class stats2 {
 			}
 			}
 			 if (scount == 0) {
+				 input.close();
 				 s = new FileReader(scoresFile);
 					readFile = new BufferedReader(s);
 					while ((score = readFile.readLine()) != null ) {

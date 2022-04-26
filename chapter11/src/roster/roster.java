@@ -1,18 +1,19 @@
 package roster;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.*;
-import java.util.ArrayList;
 import java.util.Scanner;
-public class roster {
+public class roster  {
+	
 
 	public static void main(String[] args) {
 		FileReader s;
-		BufferedReader readFile;
 		FileWriter out;
 		BufferedWriter bWriter;
 		PrintWriter pp;
-		int count = 1;
-		ArrayList<String> list = new ArrayList<String>();
+		int count = 2;
 		Scanner input = new Scanner(System.in);
 		
 		System.out.println("Enter name of file");
@@ -21,39 +22,46 @@ public class roster {
 		int scount = input.nextInt();
 		
 			try {
-			File scoresFile = new File("../Chapter11/src/roster/" + file + ".txt");
-			scoresFile.createNewFile();
-			out = new FileWriter(scoresFile);
+			File nameFile = new File("../Chapter11/src/roster/" + file + ".txt");
+			nameFile.createNewFile();
+			out = new FileWriter(nameFile);
 			bWriter = new BufferedWriter(out);
 			pp = new PrintWriter(bWriter);
 			
-			if (scount != 0) {
+			while (scount != 0) {
 				
-				System.out.println("Enter student name:");
-				input.nextLine();
-				String name = input.nextLine();
-				pp.write(name);
-				pp.flush();
-				scount -= 1;
+				if (count % 2 == 0) {
+					System.out.println("First name");
+					String fN = input.next();
+					pp.write(fN + " ");
+					pp.flush();
+					count += 1;
+					
+				} else if (count % 2 != 0) {
+					System.out.println("Last name");
+					String lN = input.next();
+					pp.write(lN + " \n");
+					pp.flush();
+					count += 1;
+					scount -= 1;
+				}
 				
-				
-			}
-			
-			else if (scount == 0) {
-				System.out.println(list);
-			}
-			
-			 
-			
-			 
-			 
-			
-			
+				if (scount == 0) {
+					input.close();
+					  Path path = nameFile.toPath();
+					try {
+						List<String> lines = Files.readAllLines(path, StandardCharsets.UTF_8);
+						lines.stream().forEach(System.out::println);
+						
+					} catch(IOException e ) {
+						e.printStackTrace();
+						
+					}
+				}
+				}
 			} catch (IOException e) {
 				System.out.println("An error has occurred");
 				System.err.println(e);
-				
 			}
-			
 	}		
 }
