@@ -3,11 +3,16 @@ package findAndReplace;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -23,53 +28,51 @@ public class findAndReplace {
 		fileName = input.next();
 		File filer = new File("../Chapter11/src/findAndReplace/" + fileName + ".txt");
 		
+		try {
+		
 		if (filer.exists()) {
+			
 			System.out.println("The file has been found \n Enter a search word or phrase:");
 			input.nextLine();
 			p1 = input.nextLine();
 			System.out.println("Enter replacement phrase:");
-			input.nextLine();
 			p2 = input.nextLine();
 			
-			try {
-				FileReader f = new FileReader(filer);
-				BufferedReader reader = new BufferedReader(f);
-				Path path = filer.toPath();
-				String line = reader.readLine();
-				File testa = new File ("../Chapter11/src/findAndReplace/wtfff.txt");
-	            
-				while((line = reader.readLine()) != null) {
-					String oldContent = line + System.lineSeparator();
-					String newContent = oldContent.replaceAll(p1, p2);
-					FileWriter in = new FileWriter(testa);
-					BufferedWriter BW = new BufferedWriter(in);
-					BW.write(newContent);
-					
-					
-					
-	            	
-	            	
-	            	
-	            	
-	            }
+			Path path = filer.toPath();
+			
+			
+			FileReader f = new FileReader(filer);	
+			BufferedReader bw = new BufferedReader(f);
+			String line = bw.readLine();
+			List<String> oldCon = Files.readAllLines(path);
+		    Collections.replaceAll(oldCon, p1, p2);
+		    System.out.println(oldCon);
+		    
+		    String newCon = String.join(",", oldCon);
+		    System.out.println(newCon);
+		    
+		    
+		   
+		    
+		
+			
+			
+			
+			
+			
+			
+				
 
+					
 				
-				
-				
-				
-				
-				
-				
-			} catch (IOException e) {
-				
-			}
-			
-		
-			
-		} else {
-			System.out.println("File not found");
 		}
-		
+					
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			
+					
+	      
 		
 		
 
