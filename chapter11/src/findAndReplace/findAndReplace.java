@@ -1,17 +1,11 @@
 package findAndReplace;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
+
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Reader;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
@@ -23,59 +17,48 @@ public class findAndReplace {
 		String p1;
 		String p2;
 		Scanner input = new Scanner(System.in);
-		
+	
+		// user enters name of file located in findandreplace folder 
 		System.out.println("Enter file name:");
 		fileName = input.next();
+		// initializes file object 
 		File filer = new File("../Chapter11/src/findAndReplace/" + fileName + ".txt");
 		
 		try {
 		
-		if (filer.exists()) {
+		
+			if (filer.exists()) {
+			System.out.println("File has been found");
+		} 
+			else {
+			System.out.println("file could not be found");
+		}
 			
-			System.out.println("The file has been found \n Enter a search word or phrase:");
+		    // Saves search word or phrase as a string 
+			System.out.println("Enter a search word or phrase:");
 			input.nextLine();
 			p1 = input.nextLine();
+			
+			//Saves replacement word or phrase as a string 
 			System.out.println("Enter replacement phrase:");
 			p2 = input.nextLine();
+			input.close(); // close input//
 			
 			Path path = filer.toPath();
-			
-			
-			FileReader f = new FileReader(filer);	
-			BufferedReader bw = new BufferedReader(f);
-			String line = bw.readLine();
+			// Saves all data from the file to an array list 
 			List<String> oldCon = Files.readAllLines(path);
-		    Collections.replaceAll(oldCon, p1, p2);
-		    System.out.println(oldCon);
+		    // Replaces all instances of the search phrase with the replacement phrase 
+			Collections.replaceAll(oldCon, p1, p2);
+		    // Converts arraylist to string with updated content 
+			String newCon = String.join(",", oldCon);
+		    // FileWriter with append set to false to overwrite the file with the updated content 
+			FileWriter f = new FileWriter(filer, false);
+		    f.write(newCon);
+		    f.close();
 		    
-		    String newCon = String.join(",", oldCon);
-		    System.out.println(newCon);
-		    
-		    
-		   
-		    
-		
-			
-			
-			
-			
-			
-			
-				
-
-					
-				
-		}
-					
+		  	
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
-			
-					
-	      
-		
-		
-
 	}
-
 }

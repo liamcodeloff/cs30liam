@@ -7,10 +7,11 @@ public class myFile1 {
 		System.out.println("Enter file name:");
 		Scanner input = new Scanner(System.in);
 		String file;
+		// Creates file object using user input for file name 
 		file = input.next();
 		File testFile = new File(file);
 		
-		
+		// if else statement to check for existence of file 
 		if (testFile.exists()) {
 			System.out.println("File exists");
 			

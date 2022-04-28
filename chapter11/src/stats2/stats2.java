@@ -26,14 +26,16 @@ public class stats2 {
 		int scount = input.nextInt();
 		
 			try {
-			File scoresFile = new File("../Chapter11/src/stats2/" + file + ".txt");
+			// initializes file object and file writers
+				File scoresFile = new File("../Chapter11/src/stats2/" + file + ".txt");
 			scoresFile.createNewFile();
 			out = new FileWriter(scoresFile);
 			bWriter = new BufferedWriter(out);
 			pp = new PrintWriter(bWriter);
 			
 			 while (scount != 0) {
-			 
+			 // acount represents counter for writing loop
+				 // This loop runs when acount is odd, entering student name
 				if (acount % 2 != 0 ) {
 				System.out.println("Enter student name to be graded");
 				input.nextLine();
@@ -42,7 +44,8 @@ public class stats2 {
 				pp.flush();
 				acount += 1;
 			
-			}  else if (acount % 2 == 0); {
+			}  // this loop runs when acount is even, entering student grade and subtracting from student counter 
+				else if (acount % 2 == 0); {
 				System.out.println("Enter student grade:");
 				int grade = input.nextInt();
 				pp.println(grade);
@@ -51,6 +54,7 @@ public class stats2 {
 				scount -= 1;
 			}
 			}
+			 //Same read loop from Stats1, runs when all students have been entered and student counter is at 0 
 			 if (scount == 0) {
 				 input.close();
 				 s = new FileReader(scoresFile);
