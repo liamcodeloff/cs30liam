@@ -1,0 +1,20 @@
+1. Data in memory is help temporarily but to be considered a file the data must be stored permanently making it a file
+
+2. import java.io.*;
+
+3. Should be c:\\inventory.txt
+
+4. 
+a) Try statement is used to surround a block of code that might throw an exception, the catch at the end specifies how to deal with the thrown exception
+b) 
+try {
+make file 
+}
+catch (IOException e) {
+System.out.println("File could not be created");
+System.err.println(e);
+}
+
+5. 
+a) err stream
+b) Messages displayed on the console
