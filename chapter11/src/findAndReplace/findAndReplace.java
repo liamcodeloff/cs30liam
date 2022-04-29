@@ -51,7 +51,7 @@ public class findAndReplace {
 			
 		    // Replaces all instances of the search phrase with the replacement phrase 
 			Collections.replaceAll(oldCon, p1, p2);
-		    // Converts arraylist to string with updated content 
+		    // Converts list to string with updated content 
 			String newCon = String.join("\n", oldCon);
 		    // FileWriter with append set to false to overwrite the file with the updated content 
 			FileWriter f = new FileWriter(filer, false);
