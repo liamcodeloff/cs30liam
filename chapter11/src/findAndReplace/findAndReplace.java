@@ -34,6 +34,11 @@ public class findAndReplace {
 			System.out.println("file could not be found");
 		}
 			
+			// Saves all data from the file to an list 
+			Path path = filer.toPath();
+			List<String> oldCon = Files.readAllLines(path);
+			System.out.println("File reads: " + oldCon);
+			
 		    // Saves search word or phrase as a string 
 			System.out.println("Enter a search word or phrase:");
 			input.nextLine();
@@ -44,19 +49,18 @@ public class findAndReplace {
 			p2 = input.nextLine();
 			input.close(); // close input//
 			
-			Path path = filer.toPath();
-			// Saves all data from the file to an array list 
-			List<String> oldCon = Files.readAllLines(path);
 		    // Replaces all instances of the search phrase with the replacement phrase 
 			Collections.replaceAll(oldCon, p1, p2);
 		    // Converts arraylist to string with updated content 
-			String newCon = String.join(",", oldCon);
+			String newCon = String.join("\n", oldCon);
 		    // FileWriter with append set to false to overwrite the file with the updated content 
 			FileWriter f = new FileWriter(filer, false);
+			
 		    f.write(newCon);
+		    System.out.println("New file reads: " + newCon);
 		    f.close();
 		    
-		  	
+		    
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
