@@ -2,7 +2,7 @@ package findName;
 
 public class search {
 	
-	public static int linear(String[] array, String find) {
+	public static int linearSTR(String[] array, String find) {
 		int index = 0;
 		
 		while ((array[index] != find) &&
