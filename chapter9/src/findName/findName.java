@@ -23,14 +23,13 @@ public class findName {
 		String searchName = input.next();
 		
 		int index = search.linearSTR(array, searchName);
-		System.out.println(index);
 			
 		
 		if (index == -1 ) {
 			System.out.println("Name could not be found");
 		}
 		else {
-			System.out.println("Name was found at element:" + index);
+			System.out.println("Name was found at element " + index);
 		}
 		
 		

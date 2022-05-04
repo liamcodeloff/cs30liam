@@ -6,6 +6,7 @@ public class search {
 		 int index = 0;
 
 		 while ((array[index].equals(strToFind) == false) && (index < array.length - 1)) { 
+			 index += 1;
 		 }
 
 		 if (array[index].equals(strToFind)) {
