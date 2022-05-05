@@ -27,42 +27,35 @@ public class Bank
 	{
 		Account newAcct;
 		double bal;
-		String fName, lName;
-
-	//add your string variables for street, city, province, postal code
+		String fName, lName, street, city, province, zip;
 
 		Scanner input = new Scanner(System.in);
 		
-		System.out.print("First name: ");
+		System.out.print("Enter first name: ");
 		fName = input.nextLine();
 
-		System.out.print("Last name: ");
+		System.out.print("Enter last name: ");
 		lName = input.nextLine();
-
-
-	//get customer street and record street
-
-	//get city 
-
-	//get province
-
-	//get postal code
-
-
-
-
-
-
-
-
-		System.out.print("Beginning balance: ");
+		
+		System.out.print("Enter street address: ");
+		street = input.nextLine();
+		
+		System.out.println("Enter city:");
+		city = input.nextLine();
+		
+		System.out.println("Enter province: ");
+		province = input.nextLine();
+		
+		System.out.println("Enter zip: ");
+		zip = input.nextLine();
+		
+		System.out.println("Enter starting balance: ");
 		bal = input.nextDouble();
 		
-		newAcct = new Account(bal, fName, lName); //update this constructor to include street, city, province, postal code	
-										//create acct object
-		accounts.add(newAcct);						//add account to bank accounts
-		
+		newAcct = new Account(bal, fName, lName, street, city, province, zip);
+		accounts.add(newAcct);
 		System.out.println("Account created. Account ID is: " + newAcct.getID());
+
 	}
 
 	
@@ -133,22 +126,42 @@ public class Bank
 	 	} else {
 	 		System.out.println("Account does not exist.");
 	 	}
-
-
-
-
-	//Create a modifyAccount(String AcctID) method 
-	//if(acctIndex > 1) 
-/*	{
-		acct = accounts.get..
-		acct.changeAddress()
-		//print acct to the screen
 	}
-	else
-	{
-	  print Account does not exits
-	}	
-*/
 
+
+	 	public void modifyAccount(String AcctID) {
+	 		Account matchAcct, acct;
+	 		matchAcct = new Account(AcctID);
+	 		int acctIndex = accounts.indexOf(matchAcct);
+	 		
+	 		if (acctIndex > 1) {
+	 			acct = accounts.get(acctIndex);
+	 			
+	 			String fName, lName, street, city, province, zip;
+	 			Scanner input = new Scanner(System.in);
+	 			
+	 			System.out.print("Enter first name: ");
+	 			fName = input.nextLine();
+
+	 			System.out.print("Enter last name: ");
+	 			lName = input.nextLine();
+	 			
+	 			System.out.print("Enter street address: ");
+	 			street = input.nextLine();
+	 			
+	 			System.out.println("Enter city:");
+	 			city = input.nextLine();
+	 			
+	 			System.out.println("Enter province: ");
+	 			province = input.nextLine();
+	 			
+	 			System.out.println("Enter zip: ");
+	 			zip = input.nextLine();
+	 		} else 
+	 		{
+	 			System.out.println("Account does not exist");
+	 		}
+	 		
+	 	}
+	
 	}
-}

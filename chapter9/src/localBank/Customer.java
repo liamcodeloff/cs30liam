@@ -12,7 +12,7 @@ public class Customer {
 	 * post: A Customer object has been created. 
 	 * Customer data has been initialized with parameters.
 	 */
-	public Customer(String fName, String lName) //modify constructor to include street, city, province, postal code
+	public Customer(String fName, String lName, String street, String city, String province, String zip) //modify constructor to include street, city, province, postal code
 	{
 		firstName = fName;
 		lastName = lName;
@@ -21,7 +21,11 @@ public class Customer {
 	}
 	
 
-	//create changeCity method that asks the user their city and records city in a variable above
+	public void changeCity(String newCity) {
+		System.out.println("Enter new city name: ");
+		
+		
+	}
 
 	//create changeStreet method that asks the user their street and records street in a variable above
 
