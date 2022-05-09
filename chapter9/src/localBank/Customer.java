@@ -1,7 +1,10 @@
 package localBank;
 
+import java.util.Scanner;
+
 public class Customer {
-	private String firstName, lastName;
+	private String firstName, lastName, street, city, province, zip;
+	Scanner input = new Scanner(System.in);
 
 	//create String variables street, city, province, postal code	
 
@@ -22,16 +25,32 @@ public class Customer {
 	
 
 	public void changeCity(String newCity) {
-		System.out.println("Enter new city name: ");
+		System.out.println("Enter new city: ");
+		newCity = input.next();
+		
+	}
+	
+	public void changeStreet(String newStreet) {
+		System.out.println("Enter new street: ");
+		newStreet = input.nextLine();
+		
+	}
+	
+	public void changeProvince(String newProvince) {
+		System.out.println("Enter new province: ");
+		newProvince = input.next();
 		
 		
 	}
+	
+	public void changeZip(String newZip) {
+		System.out.println("Enter new zip code: ");
+		newZip = input.nextLine();
+		
+	}
 
-	//create changeStreet method that asks the user their street and records street in a variable above
 
-	//create changeProvince method that asks the user their province and records province in a variable above
-
-	//create changePostalCode method that asks the user their postal code and records postal code in a variable above
+	
 
 
 
@@ -44,8 +63,8 @@ public class Customer {
 	public String toString() {
 		String custString;
 
-		//update this string so that it contains the street, city, province, and postal code
-		custString = firstName + " " + lastName + "\n";
+		custString = firstName + " " + lastName + "\n"
+					+ street + " " + city + " " + province + " " + zip;
 	 	return(custString);
 	}
 

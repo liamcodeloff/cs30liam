@@ -77,6 +77,13 @@ public class Account {
 	 		System.out.println("Not enough money in account.");
 	 	}
 	}
+	
+	public void changeAddress(String newStreet, String newCity, String newProvince, String newZip) {
+		cust.changeCity(newCity);
+		cust.changeStreet(newStreet);
+		cust.changeProvince(newProvince);
+		cust.changeZip(newZip);
+	}
 
 
 
