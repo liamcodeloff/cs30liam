@@ -86,14 +86,6 @@ public class Account {
 	}
 
 
-
-	//Create a changeAddress() method that calls the cust object from above in order to change
-	//Street, city, province, postalCode
-
-
-
-
-	
 	
 	/** 
 	 * Returns a true when objects have matching account ids.
