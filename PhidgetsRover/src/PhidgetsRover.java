@@ -1,14 +1,15 @@
-import com.phidget22.*;
-public class PhidgetsRover {
 
-	public static void main(String[] args) throws Exception {
-		//Connect to wireless rover
+import com.phidget22.*;
+
+public class PhidgetsRover {
+    public static void main(String[] args) throws Exception {
+
+        //Connect to wireless rover
         Net.addServer("", "192.168.100.1", 5661, "", 0);
 
         //Create
         DCMotor leftMotors = new DCMotor();
         DCMotor rightMotors = new DCMotor();
-        DistanceSensor sonar = new DistanceSensor();
 
         //Address
         leftMotors.setChannel(0);
@@ -17,28 +18,17 @@ public class PhidgetsRover {
         //Open
         leftMotors.open(5000);
         rightMotors.open(5000);
-        sonar.open(5000);
-       sonar.setDataInterval(1000);
 
-        while (true) {
+        //Move forward at full speed
+        leftMotors.setTargetVelocity(1);
+        rightMotors.setTargetVelocity(1);
 
-            System.out.println("Distance: " + sonar.getDistance() + " mm");
-            
-            if (sonar.getDistance() < 750) {
-                //Object detected! Stop motors
-            	leftMotors.setTargetVelocity(0);
-            	rightMotors.setTargetVelocity(0);
-            	
-                leftMotors.setTargetVelocity(-0.5);
-                rightMotors.setTargetVelocity(0.5);
-            } else {
-                //Move forward slowly (25% max speed)
-                leftMotors.setTargetVelocity(-0.6);
-                rightMotors.setTargetVelocity(-0.6);
-            }
+        //Wait for 1 second
+        Thread.sleep(1000);
 
-            //Wait for 250milliseconds
-            Thread.sleep(250);
-        }
+        //Stop motors
+        leftMotors.setTargetVelocity(0);
+        rightMotors.setTargetVelocity(0);
     }
 }
+  
