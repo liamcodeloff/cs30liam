@@ -4,6 +4,9 @@ public class PhidgetsRoverTurn {
 	public static void main(String[] args) throws Exception {
 		//Connect to wireless rover
 		Net.addServer("", "192.168.100.1", 5661, "", 0);
+		
+		
+        
 
 		//Create
         DCMotor leftMotors = new DCMotor();
@@ -12,6 +15,7 @@ public class PhidgetsRoverTurn {
         VoltageRatioInput hAxis = new VoltageRatioInput();
         DistanceSensor sonar = new DistanceSensor();
         DigitalInput button = new DigitalInput();
+        
         
         //Address
         leftMotors.setChannel(0);
@@ -57,7 +61,7 @@ public class PhidgetsRoverTurn {
 		            
 	        //Wait 100 milliseconds
 	        Thread.sleep(100);
-			            
+			/*            
 	        if (sonar.getDistance() < 300)
 	        {
 	        	//Object detected! Stop motors
@@ -71,7 +75,7 @@ public class PhidgetsRoverTurn {
 			                
 	        	Thread.sleep(500);
 	        } 
-	        
+	        */
 	        if (button.getState())
 	        {
 	        	leftMotors.setTargetVelocity(-1);
