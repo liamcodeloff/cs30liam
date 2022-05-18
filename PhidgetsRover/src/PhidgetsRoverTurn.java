@@ -15,6 +15,7 @@ public class PhidgetsRoverTurn {
         VoltageRatioInput hAxis = new VoltageRatioInput();
         DistanceSensor sonar = new DistanceSensor();
         DigitalInput button = new DigitalInput();
+        Spatial spatial = new Spatial();
         
         
         //Address
@@ -35,6 +36,21 @@ public class PhidgetsRoverTurn {
         //Increase acceleration
         leftMotors.setAcceleration(leftMotors.getMaxAcceleration());
         rightMotors.setAcceleration(rightMotors.getMaxAcceleration());
+        
+      //Spatial Event
+        spatial.addSpatialDataListener(new SpatialSpatialDataListener() {
+            public void onSpatialData(SpatialSpatialDataEvent e) {                    
+             //   double[] acceleration = e.getAcceleration();
+               // double[] angularRate = e.getAngularRate();
+                double[] magneticField = e.getMagneticField();
+                double timestamp = e.getTimestamp();
+
+              //  System.out.println("Acceleration: " + acceleration[0] + "," + acceleration[1] + "," + acceleration[2]);
+              //  System.out.println("Angular Rate: " + angularRate[0] + "," + angularRate[1] + "," + angularRate[2]);
+                System.out.println("Magnetic Field: " + Math.round(magneticField[0] * 10) + "," + Math.round(magneticField[1] * 10) + "," + Math.round(magneticField[2] * 10));
+                System.out.println("Timestamp: " + timestamp + "\n");       
+            }
+        });
 
 		        
         while(true)
@@ -58,10 +74,16 @@ public class PhidgetsRoverTurn {
 	        //Apply values 
 	        leftMotors.setTargetVelocity(leftMotorsSpeed);
 	        rightMotors.setTargetVelocity(rightMotorsSpeed);
+	        
+	        //Open
+	        spatial.open(1000);
+	        
+	       
 		            
 	        //Wait 100 milliseconds
 	        Thread.sleep(100);
-			/*            
+			
+	        /*            
 	        if (sonar.getDistance() < 300)
 	        {
 	        	//Object detected! Stop motors
@@ -76,6 +98,7 @@ public class PhidgetsRoverTurn {
 	        	Thread.sleep(500);
 	        } 
 	        */
+	        
 	        if (button.getState())
 	        {
 	        	leftMotors.setTargetVelocity(-1);
@@ -83,6 +106,8 @@ public class PhidgetsRoverTurn {
 	        	
 	        	Thread.sleep(1000);
 	        }
+	        
+	       
 			          
         }
 	}
