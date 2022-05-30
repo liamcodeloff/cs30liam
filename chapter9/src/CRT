@@ -1,0 +1,36 @@
+CRT CHAPTER 9
+
+1. Element 3 has an index value of 2
+
+2. int[] quantities = new int[20];
+
+3. 	int[] heights  = {1.65, 2.15, 4.95};
+
+4. for (int n = 0; n < grades.length; n++) {
+			
+			System.out.println(grades[n]);
+		}
+		
+5. 
+	a) 
+	for (int n = 0; n < grades.length -1 ; n++) {
+
+			int grade1 = grades.get(n);
+			grades.set(n+1, grade1);
+		}
+		b) 
+		for (int n = 1; n < grades.length; n++) {
+
+			int grade1 = grades.get(n);
+			grades.set(n-1, grade1);
+		}
+		
+6. 
+Passing a single element goes off the member type whereas passing the entire array goes off the array data type.
+
+7. 
+Because when it reaches -1 it indicates it is out of bounds
+
+8. 
+I because I is the fourth letter or the third element
+
