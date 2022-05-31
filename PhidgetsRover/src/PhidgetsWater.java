@@ -8,6 +8,9 @@ public class PhidgetsWater {
 
 	 public static void main(String[] args) throws Exception 
 	  {
+		 
+	        Net.addServer("", "192.168.100.1", 5661, "", 0);
+
 	        //Create
 	        VoltageRatioInput soil = new VoltageRatioInput();
 	        DigitalOutput pump = new DigitalOutput();
