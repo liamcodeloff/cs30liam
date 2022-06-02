@@ -14,7 +14,9 @@
 	        DCMotor rightMotors = new DCMotor();
 	        VoltageRatioInput vAxis = new VoltageRatioInput(); 
 	        VoltageRatioInput hAxis = new VoltageRatioInput();
+	        DistanceSensor sonar = new DistanceSensor();
 	        DigitalInput button = new DigitalInput();
+	        DigitalOutput pump = new DigitalOutput();
 	        
 	        //Address
 	        leftMotors.setChannel(0);
@@ -22,13 +24,17 @@
 	        vAxis.setChannel(1);
 	        hAxis.setChannel(0);
 	        button.setHubPort(0);
+	        pump.setHubPort(1);
+	        pump.setIsHubPortDevice(true);
 	
 	        //Open
 	        leftMotors.open(5000);
 	        rightMotors.open(5000);
 	        vAxis.open(5000);
 	        hAxis.open(5000);
+	        sonar.open(5000);
 	        button.open(5000);
+	        pump.open(1000);
 	
 	        //Increase acceleration
 	        leftMotors.setAcceleration(leftMotors.getMaxAcceleration());
@@ -60,14 +66,27 @@
 		        //Wait 100 milliseconds
 		        Thread.sleep(100);
 				            
-		       
+		       /* if (sonar.getDistance() < 300)
+		        {
+		        	//Object detected! Stop motors
+		        	leftMotors.setTargetVelocity(0);
+		        	rightMotors.setTargetVelocity(0);
+				              
+		        	Thread.sleep(500);
+				                
+		        	leftMotors.setTargetVelocity(1);
+		        	rightMotors.setTargetVelocity(1);
+				                
+		        	Thread.sleep(500);
+		        } */
 		        
 		        if (button.getState())
 		        {
-		        	leftMotors.setTargetVelocity(-1);
-		        	rightMotors.setTargetVelocity(1);
-		        	
-		        	Thread.sleep(1000);
+		        	pump.setState(true);
+		        }
+		        else
+		        {
+		        	pump.setState(false);
 		        }
 				          
 	        }

@@ -20,7 +20,7 @@ public class PhidgetsRover {
         rightMotors.open(5000);
 
         //Move forward at full speed
-        leftMotors.setTargetVelocity(-1);
+        leftMotors.setTargetVelocity(1);
         rightMotors.setTargetVelocity(-1);
 
         //Wait for 1 second
