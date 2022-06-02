@@ -14,9 +14,10 @@
 	        DCMotor rightMotors = new DCMotor();
 	        VoltageRatioInput vAxis = new VoltageRatioInput(); 
 	        VoltageRatioInput hAxis = new VoltageRatioInput();
-	        DistanceSensor sonar = new DistanceSensor();
 	        DigitalInput button = new DigitalInput();
 	        DigitalOutput pump = new DigitalOutput();
+	    //    DigitalInput greenButton = new DigitalInput();
+
 	        
 	        //Address
 	        leftMotors.setChannel(0);
@@ -24,15 +25,16 @@
 	        vAxis.setChannel(1);
 	        hAxis.setChannel(0);
 	        button.setHubPort(0);
-	        pump.setHubPort(1);
+	     //   greenButton.setHubPort(2);
+	        pump.setHubPort(3);
 	        pump.setIsHubPortDevice(true);
 	
 	        //Open
 	        leftMotors.open(5000);
 	        rightMotors.open(5000);
+	     //  greenButton.open(5000);
 	        vAxis.open(5000);
 	        hAxis.open(5000);
-	        sonar.open(5000);
 	        button.open(5000);
 	        pump.open(1000);
 	
@@ -80,7 +82,7 @@
 		        	Thread.sleep(500);
 		        } */
 		        
-		        if (button.getState())
+		  /*      if (greenButton.getState())
 		        {
 		        	pump.setState(true);
 		        }
@@ -88,7 +90,7 @@
 		        {
 		        	pump.setState(false);
 		        }
-				          
+				         */
 	        }
 		}
 	
