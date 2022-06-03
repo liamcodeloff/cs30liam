@@ -16,7 +16,6 @@
 	        VoltageRatioInput hAxis = new VoltageRatioInput();
 	        DigitalInput button = new DigitalInput();
 	        DigitalOutput pump = new DigitalOutput();
-	    //    DigitalInput greenButton = new DigitalInput();
 
 	        
 	        //Address
@@ -25,14 +24,13 @@
 	        vAxis.setChannel(1);
 	        hAxis.setChannel(0);
 	        button.setHubPort(0);
-	     //   greenButton.setHubPort(2);
 	        pump.setHubPort(3);
 	        pump.setIsHubPortDevice(true);
 	
 	        //Open
 	        leftMotors.open(5000);
 	        rightMotors.open(5000);
-	     //  greenButton.open(5000);
+	    
 	        vAxis.open(5000);
 	        hAxis.open(5000);
 	        button.open(5000);
@@ -82,15 +80,15 @@
 		        	Thread.sleep(500);
 		        } */
 		        
-		  /*      if (greenButton.getState())
+		  /*      if (button.getState())
 		        {
 		        	pump.setState(true);
 		        }
 		        else
 		        {
 		        	pump.setState(false);
-		        }
-				         */
+		        } */
+				         
 	        }
 		}
 	
