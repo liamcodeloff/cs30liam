@@ -16,7 +16,6 @@
 	        DCMotor rightMotors = new DCMotor();
 	        VoltageRatioInput vAxis = new VoltageRatioInput(); 
 	        VoltageRatioInput hAxis = new VoltageRatioInput();
-	        DistanceSensor sonar = new DistanceSensor();
 	        DigitalInput button = new DigitalInput();
 	        DigitalOutput pump = new DigitalOutput();
 	        
@@ -34,7 +33,6 @@
 	        rightMotors.open(5000);
 	        vAxis.open(5000);
 	        hAxis.open(5000);
-	        sonar.open(5000);
 	        button.open(5000);
 	        pump.open(1000);
 	
@@ -67,6 +65,8 @@
 			            
 		        //Wait 100 milliseconds
 		        Thread.sleep(100);
+		        
+		      
 				            
 		      
 		        if (button.getState())
@@ -77,6 +77,7 @@
 		        {
 		        	pump.setState(false);
 		        }
+		        
 				          
 	        }
 		}
