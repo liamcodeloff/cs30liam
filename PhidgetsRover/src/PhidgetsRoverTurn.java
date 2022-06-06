@@ -78,16 +78,15 @@
 			    	  if(rbutton.getState() && !buttonState)
 			    	  {
 			    		  
-			    		pump.setState(true);  
+			    		  System.out.println("True");
+			    		  
 			    	  
-
-		                     
 			    	  }
 			    	  else if (!rbutton.getState() && buttonState)
 		              {
+			    		  
+			    		  System.out.println("False");
 
-		                  pump.setState(false);
-		               
 				          
 	        }
 		}
