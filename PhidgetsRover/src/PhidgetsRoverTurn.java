@@ -19,6 +19,8 @@
 	        DigitalInput button = new DigitalInput();
 	        DigitalOutput pump = new DigitalOutput();
 	        DigitalInput rbutton = new DigitalInput();
+		    Boolean buttonState = false; // track button state changes
+
 	        
 	        //Address
 	        leftMotors.setChannel(0);
@@ -29,7 +31,7 @@
 	        pump.setHubPort(3);
 	        pump.setIsHubPortDevice(true);
 	        rbutton.setHubPort(4);
-	        rbutton.setIsLocal(true);
+	        rbutton.setIsHubPortDevice(true);
 	
 	        //Open
 	        leftMotors.open(5000);
@@ -38,7 +40,7 @@
 	        hAxis.open(5000);
 	        button.open(5000);
 	        pump.open(1000);
-	        rbutton.open(5000);
+	        rbutton.open(1000);
 	
 	        //Increase acceleration
 	        leftMotors.setAcceleration(leftMotors.getMaxAcceleration());
@@ -70,22 +72,27 @@
 		        //Wait 100 milliseconds
 		        Thread.sleep(100);
 		        
-		        
-		     		            
-		      
-		        if (rbutton.getState())
-		        {
-		        	pump.setState(true);
-		        	
-		        }
-		        else
-		        {
-		        	pump.setState(false);
-		        }
-		        
+		       
+			          
+			    	  if(rbutton.getState() && !buttonState)
+			    	  {
+			    		  
+			    		pump.setState(true);  
+			    	  
+
+		                     
+			    	  }
+			    	  else if (!rbutton.getState() && buttonState)
+		              {
+
+		                  pump.setState(false);
+		                     
+		              
+		         
 				          
 	        }
 		}
 	
+		}
 	}
 

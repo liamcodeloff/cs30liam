@@ -9,7 +9,7 @@ public class ButtonPresses {
 
 	       //Address 
 	       
-	       redButton.setHubPort(3);
+	       redButton.setHubPort(4);
 	       
 	       redButton.setIsHubPortDevice(true);
 
