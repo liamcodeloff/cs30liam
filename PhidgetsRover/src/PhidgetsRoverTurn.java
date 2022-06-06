@@ -71,6 +71,7 @@
 			            
 		        //Wait 100 milliseconds
 		        Thread.sleep(100);
+		        buttonState = rbutton.getState();
 		        
 		       
 			          
