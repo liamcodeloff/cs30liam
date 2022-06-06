@@ -18,6 +18,7 @@
 	        VoltageRatioInput hAxis = new VoltageRatioInput();
 	        DigitalInput button = new DigitalInput();
 	        DigitalOutput pump = new DigitalOutput();
+	        DigitalInput rbutton = new DigitalInput();
 	        
 	        //Address
 	        leftMotors.setChannel(0);
@@ -27,6 +28,8 @@
 	        button.setHubPort(0);
 	        pump.setHubPort(3);
 	        pump.setIsHubPortDevice(true);
+	        rbutton.setHubPort(4);
+	        rbutton.setIsLocal(true);
 	
 	        //Open
 	        leftMotors.open(5000);
@@ -35,6 +38,7 @@
 	        hAxis.open(5000);
 	        button.open(5000);
 	        pump.open(1000);
+	        rbutton.open(5000);
 	
 	        //Increase acceleration
 	        leftMotors.setAcceleration(leftMotors.getMaxAcceleration());
@@ -66,12 +70,13 @@
 		        //Wait 100 milliseconds
 		        Thread.sleep(100);
 		        
+		        
+		     		            
 		      
-				            
-		      
-		        if (button.getState())
+		        if (rbutton.getState())
 		        {
 		        	pump.setState(true);
+		        	
 		        }
 		        else
 		        {
