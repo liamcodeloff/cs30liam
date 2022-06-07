@@ -28,11 +28,17 @@ public class test {
         leftMotors.setTargetVelocity(1);
         rightMotors.setTargetVelocity(-1);
         
-        Thread.sleep(1450);
+        Thread.sleep(1500);
         
         leftMotors.setTargetVelocity(0);
         rightMotors.setTargetVelocity(0);
         
+        Thread.sleep(1000);
+        
+        leftMotors.setTargetVelocity(1);
+        rightMotors.setTargetVelocity(1);
+        
+        Thread.sleep(190);
         
 		
 

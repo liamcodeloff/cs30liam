@@ -18,8 +18,8 @@
 	        VoltageRatioInput hAxis = new VoltageRatioInput();
 	        DigitalInput button = new DigitalInput();
 	        DigitalOutput pump = new DigitalOutput();
-	        DigitalInput rbutton = new DigitalInput();
-		    Boolean buttonState = false; // track button state changes
+	     /*   DigitalInput rbutton = new DigitalInput();
+		    Boolean buttonState = false; // track button state changes */
 
 	        
 	        //Address
@@ -30,8 +30,8 @@
 	        button.setHubPort(0);
 	        pump.setHubPort(3);
 	        pump.setIsHubPortDevice(true);
-	        rbutton.setHubPort(4);
-	        rbutton.setIsHubPortDevice(true);
+	     /*   rbutton.setHubPort(4);
+	        rbutton.setIsHubPortDevice(true); */
 	
 	        //Open
 	        leftMotors.open(5000);
@@ -40,7 +40,7 @@
 	        hAxis.open(5000);
 	        button.open(5000);
 	        pump.open(1000);
-	        rbutton.open(1000);
+	      //  rbutton.open(1000);
 	
 	        //Increase acceleration
 	        leftMotors.setAcceleration(leftMotors.getMaxAcceleration());
@@ -69,13 +69,13 @@
 		        leftMotors.setTargetVelocity(leftMotorsSpeed);
 		        rightMotors.setTargetVelocity(rightMotorsSpeed);
 			            
-		        //Wait 100 milliseconds
+		 /*       //Wait 100 milliseconds
 		        Thread.sleep(100);
-		        buttonState = rbutton.getState();
+		        buttonState = rbutton.getState(); */
 		        
 		       
 			          
-			    	  if(rbutton.getState() && !buttonState)
+			    	  /* if(rbutton.getState() && !buttonState)
 			    	  {
 			    		  
 			    		  System.out.println("True");
@@ -88,7 +88,7 @@
 			    		  System.out.println("False");
 
 				          
-	        }
+	        } */
 		}
 	
 		}
