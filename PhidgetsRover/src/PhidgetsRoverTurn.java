@@ -18,8 +18,8 @@
 	        VoltageRatioInput hAxis = new VoltageRatioInput();
 	        DigitalInput button = new DigitalInput();
 	        DigitalOutput pump = new DigitalOutput();
-	     /*   DigitalInput rbutton = new DigitalInput();
-		    Boolean buttonState = false; // track button state changes */
+	        DigitalInput rbutton = new DigitalInput();
+		    Boolean buttonState = false; // track button state changes 
 
 	        
 	        //Address
@@ -30,8 +30,8 @@
 	        button.setHubPort(0);
 	        pump.setHubPort(3);
 	        pump.setIsHubPortDevice(true);
-	     /*   rbutton.setHubPort(4);
-	        rbutton.setIsHubPortDevice(true); */
+	        rbutton.setHubPort(4);
+	        rbutton.setIsHubPortDevice(true); 
 	
 	        //Open
 	        leftMotors.open(5000);
@@ -40,17 +40,15 @@
 	        hAxis.open(5000);
 	        button.open(5000);
 	        pump.open(1000);
-	      //  rbutton.open(1000);
+	        rbutton.open(1000);
 	
 	        //Increase acceleration
 	        leftMotors.setAcceleration(leftMotors.getMaxAcceleration());
 	        rightMotors.setAcceleration(rightMotors.getMaxAcceleration());
 	
-			        
-	        while(true)
-	        {
-	        	
-	        	//Get data from vertical axis (value between -1 and 1)
+	        while(true){
+	            System.out.println("Button State: " + rbutton.getState());
+	          //Get data from vertical axis (value between -1 and 1)
 	        	double verticalAxis = vAxis.getVoltageRatio();
 			          
 	        	double horizontalAxis = hAxis.getVoltageRatio();
@@ -58,39 +56,26 @@
 	        	//Use thumbstick data to figure how each side of rover should move
 		        double leftMotorsSpeed = verticalAxis - horizontalAxis;
 		        double rightMotorsSpeed = verticalAxis + horizontalAxis;
-	
+
 		        //Limit values to between -1 and 1
 		        if(leftMotorsSpeed > 1) leftMotorsSpeed = 1;
 		        if(leftMotorsSpeed < -1) leftMotorsSpeed = -1;
 		        if(rightMotorsSpeed > 1) rightMotorsSpeed = 1;
 		        if(rightMotorsSpeed < -1) rightMotorsSpeed = -1;
-	
+
 		        //Apply values 
 		        leftMotors.setTargetVelocity(leftMotorsSpeed);
 		        rightMotors.setTargetVelocity(rightMotorsSpeed);
-			            
-		 /*       //Wait 100 milliseconds
-		        Thread.sleep(100);
-		        buttonState = rbutton.getState(); */
 		        
-		       
-			          
-			    	  /* if(rbutton.getState() && !buttonState)
-			    	  {
-			    		  
-			    		  System.out.println("True");
-			    		  
-			    	  
-			    	  }
-			    	  else if (!rbutton.getState() && buttonState)
-		              {
-			    		  
-			    		  System.out.println("False");
-
-				          
-	        } */
-		}
-	
-		}
+		        if (rbutton.getState() == true)
+		        {
+		        	pump.setState(true);
+		        }
+		        else
+		        {
+		        	pump.setState(false);
+		        }
+	            Thread.sleep(150);
+	        }
+	    }
 	}
-

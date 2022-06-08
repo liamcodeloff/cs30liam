@@ -42,14 +42,14 @@ public class PhidgetsChallenge {
         rightMotors.setTargetVelocity(1);
         
         //0.59 second pause
-        Thread.sleep(215);
+        Thread.sleep(217);
         
         //Move forward at full speed
         leftMotors.setTargetVelocity(1);
         rightMotors.setTargetVelocity(-1);
         
         //1.62 second pause
-        Thread.sleep(1500);
+        Thread.sleep(1400);
         
         leftMotors.setTargetVelocity(0);
         rightMotors.setTargetVelocity(0);
@@ -68,7 +68,7 @@ public class PhidgetsChallenge {
         rightMotors.setTargetVelocity(-1);
         
         //1.62 second pause
-        Thread.sleep(1500);
+        Thread.sleep(1400);
         
         leftMotors.setTargetVelocity(0);
         rightMotors.setTargetVelocity(0);
@@ -80,17 +80,17 @@ public class PhidgetsChallenge {
         rightMotors.setTargetVelocity(1);
         
         //0.59 second pause
-        Thread.sleep(215);
+        Thread.sleep(200);
         
         //Move forward at full speed
         leftMotors.setTargetVelocity(1);
         rightMotors.setTargetVelocity(-1);
         
         //1.62 second pause
-        Thread.sleep(1500);
+        Thread.sleep(1450);
         
       
-        
+         
         //stopping both motors
         leftMotors.setTargetVelocity(0);
         rightMotors.setTargetVelocity(0);
