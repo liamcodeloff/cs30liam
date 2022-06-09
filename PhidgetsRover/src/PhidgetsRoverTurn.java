@@ -3,9 +3,12 @@
 	import java.util.Scanner;
 
 	public class PhidgetsRoverTurn 
+	// this is the code for controlling the rover with the thumbstick and 
+	//getting it to pump water when the button is pressed
 	{
 	
 		public static void main(String[] args) throws Exception
+		
 		{
 			Net.addServer("", "192.168.100.1", 5661, "", 0);
 			

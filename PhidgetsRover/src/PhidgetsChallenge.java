@@ -1,6 +1,7 @@
 import com.phidget22.*;
 
 public class PhidgetsChallenge {
+	// this is the code for the rover completing the square challenge
 
 	public static void main(String[] args) throws Exception {
 		
